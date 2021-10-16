@@ -45,8 +45,13 @@
   .nav-mobile-view {
     display: block;
     display: flex;
-    flex-direction: row;
+
     justify-content: space-between;
+    align-items: center;
+  }
+  .hamburger-icon {
+    align-self: flex-end;
+    background: #183b56;
   }
 }
 .logo-container {
@@ -117,4 +122,24 @@
 }
 .active {
   color: #f7931e;
+}
+.nav-items-popup {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+.nav-item-type {
+  text-decoration: none;
+  color: black;
+}
+.modal-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: #fff;
+  background-size: cover;
+}
+.button-close {
+  background-color: transparent;
+  color: black;
 }

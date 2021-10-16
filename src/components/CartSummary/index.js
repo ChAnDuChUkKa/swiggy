@@ -17,12 +17,12 @@ const CartSummary = () => (
           <div className="cart-summary-container">
             <div className="heading-price">
               <h1 className="order-total-value">Order Total:</h1>
-              <h1 className="total-price" data-testid="total-price">
+              <h1 className="total-price" testid="total-price">
                 {total}
               </h1>
             </div>
             <Link to="/payment">
-              <div data-testid="place-order-button" className="bt-cont">
+              <div testid="place-order-button" className="bt-cont">
                 <button type="button" className="checkout-button">
                   place Order
                 </button>

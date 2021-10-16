@@ -16,7 +16,7 @@ const NotFound = () => (
         we are sorry, the page you requested could not be found
       </p>
       <Link to="/">
-        <button className="no-button" type="button" data-testid="home-page">
+        <button className="no-button" type="button" testid="home-page">
           Home Page
         </button>
       </Link>

@@ -110,7 +110,7 @@ class RestaurantDetails extends Component {
             <FoodItem
               key={eachItem.id}
               foodDetails={eachItem}
-              data-testid="foodItem"
+              testid="foodItem"
             />
           ))}
         </ul>

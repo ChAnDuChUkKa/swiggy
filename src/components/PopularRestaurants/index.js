@@ -127,12 +127,12 @@ class PopularRestaurants extends Component {
           changeCategory={this.changeCategory}
         />
         <hr className="horizontal-line" />
-        <ul className="list-restaurants" data-testid="restaurant-item">
+        <ul className="list-restaurants" testid="restaurant-item">
           {restaurantsList.map(eachRestaurant => (
             <RestaurantItem
               key={eachRestaurant.id}
               restaurantDetails={eachRestaurant}
-              data-testid="restaurant-item"
+              testid="restaurant-item"
             />
           ))}
         </ul>
@@ -141,18 +141,18 @@ class PopularRestaurants extends Component {
             type="button"
             onClick={this.previousPage}
             className="button"
-            data-testid="pagination-left-button"
+            testid="pagination-left-button"
           >
             <GrFormPrevious className="next-button" />
           </button>
-          <h1 className="active-page" data-testid="active-page-number">
+          <h1 className="active-page" testid="active-page-number">
             {activePage} of 20
           </h1>
           <button
             className="button"
             type="button"
             onClick={this.nextPage}
-            data-testid="pagination-right-button"
+            testid="pagination-right-button"
           >
             <GrFormNext className="next-button" />
           </button>

@@ -29,7 +29,6 @@ class ReactSlick extends Component {
     }
     const apiUrl = 'https://apis.ccbp.in/restaurants-list/offers'
     const response = await fetch(apiUrl, options)
-
     if (response.ok) {
       const data = await response.json()
       const formattedData = data.offers.map(eachItem => ({

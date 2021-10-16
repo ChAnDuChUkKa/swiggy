@@ -17,7 +17,7 @@ const Home = () => {
         <NavBar activeTab="Home" />
         <ReactSlick />
       </div>
-      <div className="popular-restaurants" data-testid="popularRestaurants">
+      <div className="popular-restaurants" testid="popularRestaurants">
         <PopularRestaurants />
       </div>
       <Footer />

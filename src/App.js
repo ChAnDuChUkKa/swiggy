@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import Login from './components/Login'
 import Home from './components/Home'
 import Cart from './components/Cart'
@@ -90,31 +90,29 @@ class App extends Component {
     const {cartList} = this.state
     localStorage.setItem('cartData', JSON.stringify(cartList))
     return (
-      <BrowserRouter>
-        <CartContext.Provider
-          value={{
-            cartList,
-            addItem: this.addItem,
-            removeItem: this.removeItem,
-            decreaseCartItemQuantity: this.decreaseCartItemQuantity,
-            increaseCartItemQuantity: this.increaseCartItemQuantity,
-          }}
-        >
-          <Switch>
-            <Route exact path="/login" component={Login} />
-            <ProtectedRoute exact path="/" component={Home} />
-            <ProtectedRoute exact path="/cart" component={Cart} />
-            <ProtectedRoute
-              exact
-              path="/restaurant/:id"
-              component={RestaurantDetails}
-            />
-            <ProtectedRoute exact path="/payment" component={Payment} />
-            <Route path="/not-found" component={NotFound} />
-            <Redirect to="/not-found" />
-          </Switch>
-        </CartContext.Provider>
-      </BrowserRouter>
+      <CartContext.Provider
+        value={{
+          cartList,
+          addItem: this.addItem,
+          removeItem: this.removeItem,
+          decreaseCartItemQuantity: this.decreaseCartItemQuantity,
+          increaseCartItemQuantity: this.increaseCartItemQuantity,
+        }}
+      >
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute
+            exact
+            path="/restaurant/:id"
+            component={RestaurantDetails}
+          />
+          <ProtectedRoute exact path="/cart" component={Cart} />
+          <ProtectedRoute exact path="/payment" component={Payment} />
+          <Route path="/not-found" component={NotFound} />
+          <Redirect to="/not-found" />
+        </Switch>
+      </CartContext.Provider>
     )
   }
 }

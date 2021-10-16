@@ -30,8 +30,10 @@ class FoodItem extends Component {
           }
 
           const onDecrement = () => {
-            this.setState(prevState => ({quantity: prevState.quantity - 1}))
-            decreaseCartItemQuantity(id)
+            if (quantity > 1) {
+              this.setState(prevState => ({quantity: prevState.quantity - 1}))
+              decreaseCartItemQuantity(id)
+            }
           }
 
           const onIncrement = () => {
@@ -57,16 +59,16 @@ class FoodItem extends Component {
                       type="button"
                       onClick={onDecrement}
                       className="button"
-                      data-testid="decrement-count"
+                      testid="decrement-count"
                     >
                       -
                     </button>
-                    <div data-testid="active-count">{quantity}</div>
+                    <div testid="active-count">{quantity}</div>
                     <button
                       type="button"
                       onClick={onIncrement}
                       className="button"
-                      data-testid="increment-count"
+                      testid="increment-count"
                     >
                       +
                     </button>
@@ -76,7 +78,7 @@ class FoodItem extends Component {
                     className="add-button"
                     onClick={addItemToCart}
                     type="button"
-                    data-testid="add-button"
+                    testid="add-button"
                   >
                     Add
                   </button>

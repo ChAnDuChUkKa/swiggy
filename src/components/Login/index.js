@@ -35,6 +35,7 @@ class LogIn extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
+    console.log(userDetails)
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
@@ -73,7 +74,7 @@ class LogIn extends Component {
             type={showPassword ? 'text' : 'password'}
             id="password"
             value={password}
-            className="input-user"
+            className="input-user-password"
             onChange={this.changePassword}
             placeholder="Enter PASSWORD"
           />
@@ -151,7 +152,7 @@ class LogIn extends Component {
             <button
               className="log-in-button"
               type="submit"
-              data-testid="submitButton"
+              testid="submitButton"
             >
               Login
             </button>

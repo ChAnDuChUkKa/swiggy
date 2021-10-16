@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import NavBar from '../NavBar'
+import Footer from '../Footer'
 import './index.css'
 
 const Payment = () => (
@@ -16,11 +17,12 @@ const Payment = () => (
         Thank you for ordering. Your Payment is successfully completed.
       </p>
       <Link to="/">
-        <button className="button" type="button" data-testid="go-home">
+        <button className="button-success" type="button" testid="go-home">
           Go TO Home Page
         </button>
       </Link>
     </div>
+    <Footer />
   </>
 )
 export default Payment

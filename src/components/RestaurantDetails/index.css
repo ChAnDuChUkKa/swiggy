@@ -59,7 +59,9 @@
     font-weight: 500;
   }
 }
-
+.total {
+  color: #ffffff;
+}
 .cuisine {
   font-family: Roboto;
   font-style: normal;

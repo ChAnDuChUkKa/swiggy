@@ -15,6 +15,9 @@ const NavBar = props => {
   const {activeTab} = props
   const activeHome = activeTab === 'Home' ? 'active' : ''
   const activeCart = activeTab === 'Cart' ? 'active' : ''
+  const overlayStyles = {
+    backgroundColor: '#ffff',
+  }
 
   return (
     <nav className="nav-header">
@@ -31,40 +34,48 @@ const NavBar = props => {
             </div>
           </Link>
           <Popup
-            modal
             trigger={
               <button
                 type="button"
                 className="nav-mobile-btn"
-                data-testid="hamburgerIconButton"
+                testid="hamburgerIconButton"
               >
                 <GiHamburgerMenu className="hamburger-icon" />
               </button>
             }
             className="popup-content"
+            overlayStyle={overlayStyles}
           >
             {close => (
               <div className="modal-container">
-                <button
-                  className="button-close"
-                  type="button"
-                  data-testid="closeButton"
-                  onClick={() => close()}
-                >
-                  <IoMdClose size="30" color="#616e7c" />
-                </button>
                 <ul className="nav-items-popup">
                   <Link to="/">
-                    <li className="nav-item-type" onClick={() => close()}>
+                    <li className="logout-desktop-btn" onClick={() => close()}>
                       Home
                     </li>
                   </Link>
                   <Link to="/cart">
-                    <li className="nav-item-type" onClick={() => close()}>
+                    <li className="logout-desktop-btn" onClick={() => close()}>
                       cart
                     </li>
                   </Link>
                 </ul>
+                <button
+                  type="button"
+                  className="logout-desktop-btn"
+                  onClick={onClickLogOut}
+                  testid="logOutButton"
+                >
+                  Logout
+                </button>
+                <button
+                  className="button-close"
+                  type="button"
+                  testid="closeButton"
+                  onClick={() => close()}
+                >
+                  <IoMdClose size="30" color="#616e7c" />
+                </button>
               </div>
             )}
           </Popup>
@@ -95,7 +106,7 @@ const NavBar = props => {
               type="button"
               className="logout-desktop-btn"
               onClick={onClickLogOut}
-              data-testid="logOutButton"
+              testid="logOutButton"
             >
               Logout
             </button>

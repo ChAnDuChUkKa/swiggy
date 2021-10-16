@@ -1,8 +1,6 @@
 .footer-container {
-  width: 1440px;
-  height: 400px;
-  left: 0px;
-  top: 1268px;
+  width: 100%;
+  margin-left: 45px;
   /* Light / blue-gray / 900 */
   background: #0f172a;
   display: flex;
@@ -49,6 +47,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .pin {
   width: 40px;

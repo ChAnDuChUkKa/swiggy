@@ -16,14 +16,14 @@ const RestaurantsHeader = props => {
           Select your favourite restaurant special dish and make your day
           happy...
         </p>
-        <div className="sort" data-testid="sort-by">
+        <div className="sort" testid="sort-by">
           <BsFilterLeft className="icon" />
-          <p className="sort-by">sort by {activeCategory}</p>
+          <p className="sort-by">sort by</p>
           <select
             className="sort-by-select"
             value={activeCategory}
             onChange={changeOption}
-            data-testid="sorting-restaurants"
+            testid="sorting-restaurants"
           >
             {sortByOptions.map(eachOption => (
               <option

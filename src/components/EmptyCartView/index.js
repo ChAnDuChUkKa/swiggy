@@ -13,7 +13,7 @@ const EmptyCartView = () => (
       Your cart is empty.Add something to the menu.
     </p>
     <Link to="/">
-      <button className="empty-button" type="button" data-testid="order-now">
+      <button className="empty-button" type="button" testid="order-now">
         Order Now
       </button>
     </Link>
