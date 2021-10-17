@@ -91,7 +91,7 @@ class PopularRestaurants extends Component {
   )
 
   progressView = () => (
-    <div className="loader" data-testid="restaurants-list-loader">
+    <div className="loader" testid="restaurants-list-loader">
       <Loader type="TailSpin" color="#F7931E" height="50" width="50" />
     </div>
   )
@@ -132,7 +132,6 @@ class PopularRestaurants extends Component {
             <RestaurantItem
               key={eachRestaurant.id}
               restaurantDetails={eachRestaurant}
-              testid="restaurant-item"
             />
           ))}
         </ul>

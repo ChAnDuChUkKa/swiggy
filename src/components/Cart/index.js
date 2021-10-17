@@ -15,17 +15,21 @@ const Cart = () => (
       return (
         <>
           <NavBar activeTab="Cart" />
-          <>
+          <div className="cart_item_container">
             {isEmpty ? (
               <EmptyCartView />
             ) : (
               <div className="cart-container">
+                <div className="total-items">
+                  <p className="item-image">Item</p>
+                  <p className="item-image">Quantity</p>
+                  <p className="item-image">Price</p>
+                </div>
                 <CartListView />
-                <hr className="horizontal-line-view" />
                 <CartSummary />
               </div>
             )}
-          </>
+          </div>
           <Footer />
         </>
       )

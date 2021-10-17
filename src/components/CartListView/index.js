@@ -5,21 +5,18 @@ import './index.css'
 const CartListView = () => (
   <CartContext.Consumer>
     {value => {
-      const {cartList} = value
-
+      const stringifiedCartList = localStorage.getItem('cartData')
+      const parsedCartList = JSON.parse(stringifiedCartList)
       return (
-        <div className="cart-list-view-container">
-          <div className="total-items">
-            <p className="item-image">Item</p>
-            <p className="item-image">Quantity</p>
-            <p className="item-image">Price</p>
-          </div>
-          <ul className="cart-list">
-            {cartList.map(eachCartItem => (
-              <CartItem key={eachCartItem.id} cartItemDetails={eachCartItem} />
-            ))}
-          </ul>
-        </div>
+        <ul className="cart-list">
+          {parsedCartList.map(eachCartItem => (
+            <CartItem
+              key={eachCartItem.id}
+              cartItemDetails={eachCartItem}
+              value={value}
+            />
+          ))}
+        </ul>
       )
     }}
   </CartContext.Consumer>

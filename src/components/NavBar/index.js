@@ -50,12 +50,20 @@ const NavBar = props => {
               <div className="modal-container">
                 <ul className="nav-items-popup">
                   <Link to="/">
-                    <li className="logout-desktop-btn" onClick={() => close()}>
+                    <li
+                      className="logout-desktop-btn"
+                      onClick={() => close()}
+                      key="home"
+                    >
                       Home
                     </li>
                   </Link>
                   <Link to="/cart">
-                    <li className="logout-desktop-btn" onClick={() => close()}>
+                    <li
+                      className="logout-desktop-btn"
+                      onClick={() => close()}
+                      key="cart"
+                    >
                       cart
                     </li>
                   </Link>
@@ -92,16 +100,17 @@ const NavBar = props => {
             </div>
           </Link>
           <ul className="nav-menu">
-            <li className="nav-menu-item">
-              <Link to="/" className={`nav-link ${activeHome}`}>
+            <Link to="/" className={`nav-link ${activeHome}`}>
+              <li className="nav-menu-item" key="Home">
                 Home
-              </Link>
-            </li>
-            <li className="nav-menu-item">
-              <Link to="/cart" className={`nav-link ${activeCart}`}>
+              </li>
+            </Link>
+            <Link to="/cart" className={`nav-link ${activeCart}`}>
+              <li className="nav-menu-item" key="Cart">
                 Cart
-              </Link>
-            </li>
+              </li>
+            </Link>
+
             <button
               type="button"
               className="logout-desktop-btn"

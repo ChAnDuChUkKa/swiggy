@@ -121,7 +121,7 @@ class RestaurantDetails extends Component {
   renderFailureDetails = () => <h1>something went wrong</h1>
 
   progressView = () => (
-    <div className="loader" data-testid="restaurant-details-loader">
+    <div className="loader" testid="restaurant-details-loader">
       <Loader type="TailSpin" color="#F7931E" height="50" width="50" />
     </div>
   )

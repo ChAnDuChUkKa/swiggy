@@ -14,6 +14,7 @@ const CartSummary = () => (
 
       return (
         <>
+          <hr />
           <div className="cart-summary-container">
             <div className="heading-price">
               <h1 className="order-total-value">Order Total:</h1>

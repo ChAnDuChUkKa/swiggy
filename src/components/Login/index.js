@@ -1,10 +1,10 @@
 import {Component} from 'react'
-import Cookie from 'js-cookie'
+import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 import {AiFillEye, AiFillEyeInvisible} from 'react-icons/ai'
 import './index.css'
 
-class LogIn extends Component {
+class Login extends Component {
   state = {
     username: '',
     password: '',
@@ -23,7 +23,7 @@ class LogIn extends Component {
 
   successSubmit = jwtToken => {
     const {history} = this.props
-    Cookie.set('jwt_token', jwtToken, {expires: 30})
+    Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
   }
 
@@ -76,7 +76,7 @@ class LogIn extends Component {
             value={password}
             className="input-user-password"
             onChange={this.changePassword}
-            placeholder="Enter PASSWORD"
+            placeholder="ENTER PASSWORD"
           />
           {showPassword ? (
             <button
@@ -113,7 +113,7 @@ class LogIn extends Component {
           value={username}
           onChange={this.changeUsername}
           className="input-user"
-          placeholder="Enter USERNAME"
+          placeholder="ENTER USERNAME"
         />
       </>
     )
@@ -121,7 +121,7 @@ class LogIn extends Component {
 
   render() {
     const {error, errorMessage} = this.state
-    const jwtToken = Cookie.get('jwt_token')
+    const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
@@ -169,4 +169,4 @@ class LogIn extends Component {
     )
   }
 }
-export default LogIn
+export default Login

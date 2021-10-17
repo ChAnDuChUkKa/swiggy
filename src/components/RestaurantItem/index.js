@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import {AiOutlineStar} from 'react-icons/ai'
+import {ImStarFull} from 'react-icons/im'
 import './index.css'
 
 const RestaurantItem = props => {
@@ -13,7 +13,7 @@ const RestaurantItem = props => {
           <h1 className="head">{name}</h1>
           <p className="type-of-food">{cuisine}</p>
           <div className="rating-container-restaurant">
-            <AiOutlineStar className="star" />
+            <ImStarFull className="star" />
             <p className="rating">{userRating.rating}</p>
           </div>
         </div>

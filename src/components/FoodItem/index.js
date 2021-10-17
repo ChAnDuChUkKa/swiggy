@@ -1,10 +1,10 @@
 import {Component} from 'react'
-import {AiOutlineStar} from 'react-icons/ai'
+import {ImStarFull} from 'react-icons/im'
 import CartContext from '../../context/CartContext'
 import './index.css'
 
 class FoodItem extends Component {
-  state = {quantity: 0, isAddButtonClicked: false}
+  state = {quantity: 0}
 
   render() {
     return (
@@ -17,7 +17,7 @@ class FoodItem extends Component {
           } = value
           const {foodDetails} = this.props
           const {id, cost, foodImageUrl, name, rating} = foodDetails
-          const {quantity, isAddButtonClicked} = this.state
+          const {quantity} = this.state
 
           const addItemToCart = () => {
             this.setState(
@@ -26,14 +26,11 @@ class FoodItem extends Component {
               }),
               addItem({...foodDetails, quantity: 1}),
             )
-            this.setState({isAddButtonClicked: true})
           }
 
           const onDecrement = () => {
-            if (quantity > 1) {
-              this.setState(prevState => ({quantity: prevState.quantity - 1}))
-              decreaseCartItemQuantity(id)
-            }
+            this.setState(prevState => ({quantity: prevState.quantity - 1}))
+            decreaseCartItemQuantity(id)
           }
 
           const onIncrement = () => {
@@ -44,16 +41,16 @@ class FoodItem extends Component {
           }
 
           return (
-            <li className="food-container">
+            <li className="food-container" testid="food-item">
               <img src={foodImageUrl} alt="food" className="food-image" />
               <div className="food-details">
                 <h1 className="food-name">{name}</h1>
                 <p className="cost">{cost}.00</p>
                 <div className="rating-item-container">
-                  <AiOutlineStar className="star-image" />
+                  <ImStarFull className="star-image" />
                   <p className="rating">{rating}</p>
                 </div>
-                {isAddButtonClicked ? (
+                {quantity !== 0 ? (
                   <div className="quantity-buttons">
                     <button
                       type="button"

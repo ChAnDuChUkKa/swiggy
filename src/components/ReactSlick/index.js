@@ -59,7 +59,7 @@ class ReactSlick extends Component {
     }
 
     return (
-      <ul className="carousal-container" data-testid="carousalElements">
+      <ul className="carousal-container">
         <Slider {...settings}>
           {carousalImages.map(eachItem => (
             <li className="carousal-list-item" key={eachItem.id}>
@@ -76,8 +76,8 @@ class ReactSlick extends Component {
   }
 
   renderProgressView = () => (
-    <div className="loader" data-testid="restaurants-offers-loader">
-      <Loader type="Oval" color="#F7931E" height="50" width="50" />
+    <div className="loader" testid="restaurants-offers-loader">
+      <Loader type="TailSpin" color="#F7931E" height="50" width="50" />
     </div>
   )
 

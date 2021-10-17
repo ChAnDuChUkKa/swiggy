@@ -15,7 +15,7 @@ const CartItem = props => (
       } = value
       const {cartItemDetails} = props
       const {id, name, cost, foodImageUrl, quantity} = cartItemDetails
-      console.log(id)
+
       const onClickDecrement = () => {
         decreaseCartItemQuantity(id)
       }
@@ -45,7 +45,9 @@ const CartItem = props => (
                 >
                   <BsDashSquare className="icon-quantity" />
                 </button>
-                <p className="cart-quantity">{quantity}</p>
+                <p className="cart-quantity" testid="item-quantity">
+                  {quantity}
+                </p>
                 <button
                   type="button"
                   className="quantity-controller-button"
